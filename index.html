@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Palindrome</title>
+ </head>
+ <body>
+    <h1 style="text-align: center;">Palindrome Number Finder </h1>
+    <form onsubmit="return palindrome()">
+        <label>Enter a Number:</label><br>
+        <input type="number" id="n" /><br>
+        <input type="submit" value="FIND" /><br>
+    </form>
+    <script>
+        function palindrome() {
+            var rev = "", c, r;
+            var n = parseInt(document.getElementById("n").value);
+            c = n;
+            while (n != 0) {
+                r = n % 10;
+                rev = (rev * 10) + r;
+                n = (n / 10);
+            }
+            if (rev == c) {
+                document.getElementById("result").innerHTML = "Palindrome number";
+
+            }
+            else {
+                document.getElementById("result").innerHTML = " Not a Palindrome number";
+            }
+            return false;
+        }
+    </script>
+    <p id="result"></p>
+ </body>
+
+</html>
